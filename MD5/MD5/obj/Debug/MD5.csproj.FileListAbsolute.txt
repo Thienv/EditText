@@ -1,0 +1,12 @@
+C:\Users\Phan Minh Sang\source\repos\MD5\MD5\obj\Debug\MD5.csprojAssemblyReference.cache
+C:\Users\Phan Minh Sang\source\repos\MD5\MD5\obj\Debug\MD5.Form1.resources
+C:\Users\Phan Minh Sang\source\repos\MD5\MD5\obj\Debug\MD5.Form2.resources
+C:\Users\Phan Minh Sang\source\repos\MD5\MD5\obj\Debug\MD5.Form3.resources
+C:\Users\Phan Minh Sang\source\repos\MD5\MD5\obj\Debug\MD5.Properties.Resources.resources
+C:\Users\Phan Minh Sang\source\repos\MD5\MD5\obj\Debug\MD5.csproj.GenerateResource.cache
+C:\Users\Phan Minh Sang\source\repos\MD5\MD5\obj\Debug\MD5.csproj.CoreCompileInputs.cache
+C:\Users\Phan Minh Sang\source\repos\MD5\MD5\bin\Debug\MD5.exe.config
+C:\Users\Phan Minh Sang\source\repos\MD5\MD5\bin\Debug\MD5.exe
+C:\Users\Phan Minh Sang\source\repos\MD5\MD5\bin\Debug\MD5.pdb
+C:\Users\Phan Minh Sang\source\repos\MD5\MD5\obj\Debug\MD5.exe
+C:\Users\Phan Minh Sang\source\repos\MD5\MD5\obj\Debug\MD5.pdb
