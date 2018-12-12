@@ -31,9 +31,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtRgtRePassword = new System.Windows.Forms.TextBox();
+            this.txtRgtPassword = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,9 +46,9 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtRgtRePassword);
+            this.panel1.Controls.Add(this.txtRgtPassword);
+            this.panel1.Controls.Add(this.txtUserName);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -78,27 +78,29 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox3
+            // txtRgtRePassword
             // 
-            this.textBox3.Location = new System.Drawing.Point(197, 135);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(177, 20);
-            this.textBox3.TabIndex = 6;
+            this.txtRgtRePassword.Location = new System.Drawing.Point(197, 135);
+            this.txtRgtRePassword.Name = "txtRgtRePassword";
+            this.txtRgtRePassword.PasswordChar = '*';
+            this.txtRgtRePassword.Size = new System.Drawing.Size(177, 20);
+            this.txtRgtRePassword.TabIndex = 6;
             // 
-            // textBox2
+            // txtRgtPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(197, 97);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(177, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtRgtPassword.Location = new System.Drawing.Point(197, 97);
+            this.txtRgtPassword.Name = "txtRgtPassword";
+            this.txtRgtPassword.PasswordChar = '*';
+            this.txtRgtPassword.Size = new System.Drawing.Size(177, 20);
+            this.txtRgtPassword.TabIndex = 5;
             // 
-            // textBox1
+            // txtUserName
             // 
-            this.textBox1.Location = new System.Drawing.Point(197, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 20);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtUserName.Location = new System.Drawing.Point(197, 61);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(177, 20);
+            this.txtUserName.TabIndex = 4;
+            this.txtUserName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label4
             // 
@@ -159,9 +161,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtRgtRePassword;
+        private System.Windows.Forms.TextBox txtRgtPassword;
+        private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }

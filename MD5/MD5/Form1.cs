@@ -8,15 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.IO;
+
 namespace MD5
 {
     public partial class Form1 : Form
     {
+        private string UserVld;
+        private string PasswordVld;
         public Form1()
         {
             InitializeComponent();
+            this.UserVld = "";
+            this.PasswordVld = "";
         }
-        Login login = new Login("admin", "1234");
+        
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -30,23 +36,44 @@ namespace MD5
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //textBox2.Text = "";
-            // The password character is an asterisk.  
-           
-            string user = textBox1.Text;
-            string pass = textBox2.Text;
-            //check if eligible to be logged in
-            if (login.IsLoggedIn(user, pass))
+            
+            try
             {
-                Form2 f2 = new Form2();
-                f2.ShowDialog();
-                
+
+
+                string path = @"D:\MyTest.txt";
+
+                IEnumerable<String> readText = File.ReadAllLines(path);
+                foreach (string text in readText)
+                {
+                    int index = text.IndexOf("\t");
+                    this.UserVld = text.Substring(0, index);
+                    this.PasswordVld = text.Substring(index + 1);
+                    Login login = new Login(UserVld, PasswordVld);
+                    string user = textBox1.Text;
+                    string pass = Login.ConvertMD5Hash(textBox2.Text);
+                    //check if eligible to be logged in
+                    if (login.IsLoggedIn(user, pass))
+                    {
+
+                        Form2 f2 = new Form2();
+                        f2.ShowDialog();
+                        
+                    }
+
+                }
             }
-            else
+            catch
             {
-                //show default login error message
                 MessageBox.Show("Login Error!");
             }
+            
+            
+                
+            
+                //show default login error message
+                
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.IO;
+using System.Security.Cryptography;
+
 namespace MD5
 
 {
@@ -39,7 +42,7 @@ namespace MD5
         //validate integer
         private bool IntegerValidator(string input)
         {
-            string pattern = "[^0-9]";
+            string pattern = "[^0-9a-zA-Z]";
             if (Regex.IsMatch(input, pattern))
             {
                 return true;
@@ -58,6 +61,7 @@ namespace MD5
         //method to check if elegible to be logged in
         internal bool IsLoggedIn(string user, string pass)
         {
+           
             //check user name empty
             if (string.IsNullOrEmpty(user))
             {
@@ -107,6 +111,19 @@ namespace MD5
                     }
                 }
             }
+        }
+
+        public static string ConvertMD5Hash(string input)
+        {
+            StringBuilder hash = new StringBuilder();
+            MD5CryptoServiceProvider md5provider = new MD5CryptoServiceProvider();
+            byte[] bytes = md5provider.ComputeHash(new UTF8Encoding().GetBytes(input));
+
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                hash.Append(bytes[i].ToString("x2"));
+            }
+            return hash.ToString();
         }
     }
 }

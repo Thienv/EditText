@@ -54,20 +54,39 @@ namespace MD5
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Text Documents|*.txt", ValidateNames = true })
+            string path = @"D:\MyTest.txt";
+            if (!this.ValidatePassword())
             {
-                if (sfd.ShowDialog() == DialogResult.OK)
+                MessageBox.Show("Password not same! Please enter");
+            }
+            else
+            {
+                try
                 {
-                    using (StreamWriter sw = new StreamWriter(sfd.FileName))
+                    if (!File.Exists(path))
                     {
-                        sw.WriteLineAsync(textBox1.Text);
-                        sw.WriteLineAsync(textBox2.Text);
-                        sw.WriteLineAsync(textBox3.Text);
-                        MessageBox.Show("You have been successfully saved", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        File.WriteAllText(path, txtUserName.Text + "\t" + Login.ConvertMD5Hash(txtRgtPassword.Text) + Environment.NewLine);
+                        
                     }
+                    File.AppendAllText(path, txtUserName.Text + "\t" + Login.ConvertMD5Hash(txtRgtPassword.Text) + Environment.NewLine);
+                    MessageBox.Show("register successfull!");
                 }
+                catch
+                {
+                    MessageBox.Show("not success!");
+                }
+                
             }
         }
+
+        private bool ValidatePassword()
+        {
+            if(txtRgtPassword.Text == txtRgtRePassword.Text)
+            {
+                return true;
+            }
+            return false;
+        }
+        
     }
 }
