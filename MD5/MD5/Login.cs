@@ -81,7 +81,7 @@ namespace MD5
             {
                 if (Username != user)
                 {
-                    MessageBox.Show("User name is incorrect!");
+                    //MessageBox.Show("User name is incorrect!");
                     ClearTexts(user, pass);
                     return false;
                 }

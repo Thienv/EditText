@@ -12,9 +12,9 @@ using System.IO;
 
 namespace MD5
 {
-    public partial class Form3 : Form
+    public partial class RegisterForm : Form
     {
-        public Form3()
+        public RegisterForm()
         {
             InitializeComponent();
         }
@@ -70,6 +70,9 @@ namespace MD5
                     }
                     File.AppendAllText(path, txtUserName.Text + "\t" + Login.ConvertMD5Hash(txtRgtPassword.Text) + Environment.NewLine);
                     MessageBox.Show("register successfull!");
+                    this.Hide();
+                    RichTextBoxForm rbf = new RichTextBoxForm();
+                    rbf.Show();
                 }
                 catch
                 {

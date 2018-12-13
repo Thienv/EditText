@@ -12,11 +12,11 @@ using System.IO;
 
 namespace MD5
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
         private string UserVld;
         private string PasswordVld;
-        public Form1()
+        public LoginForm()
         {
             InitializeComponent();
             this.UserVld = "";
@@ -36,7 +36,7 @@ namespace MD5
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            int flat = 0;
             try
             {
 
@@ -55,9 +55,10 @@ namespace MD5
                     //check if eligible to be logged in
                     if (login.IsLoggedIn(user, pass))
                     {
-
-                        Form2 f2 = new Form2();
+                        this.Hide();
+                        RichTextBoxForm f2 = new RichTextBoxForm();
                         f2.ShowDialog();
+                        flat = 1;
                         
                     }
 
@@ -67,7 +68,10 @@ namespace MD5
             {
                 MessageBox.Show("Login Error!");
             }
-            
+            if(flat == 0)
+            {
+                MessageBox.Show("Login Failed!");
+            }
             
                 
             
@@ -78,9 +82,9 @@ namespace MD5
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form3 f3 = new Form3();
-            f3.ShowDialog();
-            this.Close();
+            this.Hide();
+            RegisterForm f3 = new RegisterForm();
+            f3.ShowDialog();            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

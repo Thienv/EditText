@@ -1,6 +1,6 @@
 ﻿namespace MD5
 {
-    partial class Form3
+    partial class RegisterForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtRgtRePassword = new System.Windows.Forms.TextBox();
             this.txtRgtPassword = new System.Windows.Forms.TextBox();
@@ -44,7 +43,6 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.txtRgtRePassword);
             this.panel1.Controls.Add(this.txtRgtPassword);
@@ -57,16 +55,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(439, 226);
             this.panel1.TabIndex = 0;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(257, 176);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(81, 25);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -140,13 +128,13 @@
             this.label1.Text = "Đăng ký";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Form3
+            // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
-            this.Name = "Form3";
+            this.Name = "RegisterForm";
             this.Text = "Form3";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -165,6 +153,5 @@
         private System.Windows.Forms.TextBox txtRgtPassword;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
     }
 }

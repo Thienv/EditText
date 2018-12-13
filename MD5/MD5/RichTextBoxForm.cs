@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace MD5
 {
-    public partial class Form2 : Form
+    public partial class RichTextBoxForm : Form
     {
-        public Form2()
+        public RichTextBoxForm()
         {
             InitializeComponent();
         }
@@ -25,7 +25,19 @@ namespace MD5
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Text Documents|*.txt", ValidateNames = true })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    using (StreamWriter sw = new StreamWriter(sfd.FileName))
+                    {
+                        sw.WriteLineAsync(richTextBox1.Text);
+
+                        MessageBox.Show("You have been successfully saved", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+            }
         }
 
         private async void button2_Click(object sender, EventArgs e)
